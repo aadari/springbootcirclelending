@@ -1,5 +1,7 @@
 package com.demo.circlelending.services.impl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -21,23 +23,24 @@ public class PayLoanServiceImpl implements PayLoanService
 	}
 
 	@Override
-	public Loan findByLoanName(Double loanName) 
+	public Loan findByLoanName(String loanName) 
 	{
-		return null;
+		return payLoanRepository.findByLoanName(loanName);
 	}
 
 	@Override
-	public Loan findByLoanAmountBetween(Double startingAmount, Double endAmount) 
+	public List<Loan> findByLoanAmountBetween(Double startingAmount, Double endAmount) 
 	{
 		
-		return null;
+		return payLoanRepository.findByLoanAmountBetween(startingAmount, endAmount);
 	}
 
 	@Override
-	public Loan findByInterestRate(Float interestRate) 
+	public List<Loan> findByInterestRate(Float interestRate) 
 	{
 		
-		return null;
+		List<Loan> loansByInterestRate = payLoanRepository.findByInterestRate(interestRate);
+		return loansByInterestRate;
 	}
 
 }
