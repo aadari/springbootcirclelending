@@ -7,6 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class CircleLendingSpringBootApplication
 {
 
+	
 	public static void main(String[] args) 
 	{
 		SpringApplication.run(CircleLendingSpringBootApplication.class, args);
